@@ -7,15 +7,37 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs",
+    "lint:js": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
+    "lint:prettier": "yarn lint:js && yarn lint:prettier",
+    "lintfix": "prettier --write --list-different . && yarn lint:js --fix",
+    "lint": "eslint --fix .",
+    "test": "vitest"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/tailwindcss": "^6.9.5",
+    "@nuxt/test-utils": "^3.3.2",
+    "@nuxt/types": "^2.16.3",
+    "@nuxt/typescript-build": "^3.0.0",
+    "@nuxtjs/color-mode": "^3.3.0",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@typescript-eslint/parser": "^6.7.3",
     "nuxt": "^3.8.1",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "playwright": "^1.32.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2",
+    "vite-plugin-inspect": "^0.7.39",
+    "vitest": "^0.32.2",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "apexcharts": "^3.44.0"
+    "apexcharts": "^3.44.0",
+    "vue3-apexcharts": "^1.4.4"
   }
 }
